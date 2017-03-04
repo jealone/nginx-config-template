@@ -1,8 +1,9 @@
-# 
+#START
 fastcgi_split_path_info ^(.+?\.php)(.*)$; # fastcgi_split_path_info 的作用就是把参数分割成 $fastcgi_script_name 和 $fastcgi_path_info
+fastcgi_index index.php; # 如果URI以斜线结尾，文件名将追加到URI后面, 这个值将存储在变量$fastcgi_script_name
 fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 fastcgi_param  PATH_INFO        $fastcgi_path_info;
-fastcgi_index index.php;
+
 
 fastcgi_param  QUERY_STRING       $query_string;
 fastcgi_param  REQUEST_METHOD     $request_method;
